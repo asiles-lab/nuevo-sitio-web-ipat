@@ -1,0 +1,4 @@
+const menu=document.querySelector('.menu');const nav=document.querySelector('#nav');menu.addEventListener('click',()=>{const open=menu.getAttribute('aria-expanded')!=='true';menu.setAttribute('aria-expanded',String(open));nav.classList.toggle('open',open);menu.textContent=open?'Cerrar':'Menú'});nav.addEventListener('click',event=>{if(event.target.closest('a')){nav.classList.remove('open');menu.setAttribute('aria-expanded','false');menu.textContent='Menú'}});
+const level=document.querySelector('#level');function updateContact(){const message='Hola, quisiera información sobre admisiones 2027'+(level.value?' para el Nivel '+level.value:'')+'.';document.querySelector('#whatsapp').href='https://wa.me/5491136648962?text='+encodeURIComponent(message)}if(level)level.addEventListener('change',updateContact);document.querySelectorAll('.level-link').forEach(link=>link.addEventListener('click',()=>{level.value=link.dataset.level;updateContact()}));
+
+
